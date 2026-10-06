@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, send_from_directory
 import sqlite3
 import os
+import database
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -153,7 +154,6 @@ def create_note():
         connection.commit()
         connection.close()
 
-        # Temporary message to check PDF filename
         return f"Note created successfully! PDF: {pdf_filename}"
 
     return render_template("create_note.html")
