@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard | NoteHub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>NoteHub 📚</h1>
+
+        <p>Collaborative Notes Sharing Platform</p>
+
+        <hr>
+
+        <h2>Dashboard</h2>
+
+        <p>What would you like to do?</p>
+
+        <br>
+
+        <div class="dashboard-card">
+
+            <h2>📝 Create a Note</h2>
+
+            <p>
+                Create and share your study notes with other students.
+            </p>
+
+            <a href="/create-note" class="btn">
+                Create Note
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h2>📚 Explore Notes</h2>
+
+            <p>
+                Browse notes shared by students.
+            </p>
+
+            <a href="/explore" class="btn">
+                Explore Notes
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h2>🔍 Search Notes</h2>
+
+            <p>
+                Find notes by title, subject or content.
+            </p>
+
+            <a href="/search" class="btn">
+                Search Notes
+            </a>
+
+        </div>
+
+
+        <br>
+
+        <a href="/">
+            Logout
+        </a>
+
+    </div>
+
+</body>
+
+</html>

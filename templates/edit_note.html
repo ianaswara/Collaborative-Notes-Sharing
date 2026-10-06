@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Note | NoteHub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Edit Note ✏️</h1>
+
+        <p>Update your note details below.</p>
+
+        <br>
+
+        <form method="POST" action="/edit-note/{{ note[0] }}">
+
+            <label>Note Title:</label>
+
+            <input
+                type="text"
+                name="title"
+                value="{{ note[1] }}"
+                required
+            >
+
+            <br><br>
+
+            <label>Subject:</label>
+
+            <input
+                type="text"
+                name="subject"
+                value="{{ note[2] }}"
+                required
+            >
+
+            <br><br>
+
+            <label>Note Content:</label>
+
+            <textarea
+                name="content"
+                rows="10"
+                required
+            >{{ note[3] }}</textarea>
+
+            <br><br>
+
+            <button type="submit">
+                💾 Save Changes
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="/explore">
+            ← Back to Explore Notes
+        </a>
+
+    </div>
+
+</body>
+
+</html>

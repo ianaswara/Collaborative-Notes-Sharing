@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Search Notes | NoteHub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Search Notes 🔍</h1>
+
+        <p>Find notes by title, subject or content.</p>
+
+        <br>
+
+        <form method="POST" action="/search">
+
+            <input
+                type="text"
+                name="keyword"
+                placeholder="Search for notes..."
+                required
+            >
+
+            <br><br>
+
+            <button type="submit">
+                🔍 Search
+            </button>
+
+        </form>
+
+        <br>
+
+        {% if notes %}
+
+            <h2>Search Results</h2>
+
+            {% for note in notes %}
+
+                <div class="note-card">
+
+                    <h2>{{ note[1] }}</h2>
+
+                    <p>
+                        <strong>Subject:</strong> {{ note[2] }}
+                    </p>
+
+                    <p>
+                        {{ note[3] }}
+                    </p>
+
+                    {% if note[4] %}
+
+                        <p>
+                            📄
+                            <a href="/uploads/{{ note[4] }}" target="_blank">
+                                View / Download PDF
+                            </a>
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+            {% endfor %}
+
+        {% elif searched %}
+
+            <div class="note-card">
+
+                <p>❌ No notes found.</p>
+
+            </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/dashboard">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+
+</html>

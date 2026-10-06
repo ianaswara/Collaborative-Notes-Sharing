@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Login | NoteHub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Login to NoteHub 📚</h1>
+
+        <form method="POST" action="/login">
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <br><br>
+
+            <label>Password:</label>
+            <input type="password" name="password" required>
+
+            <br><br>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <br>
+
+        <p>
+            Don't have an account?
+            <a href="/signup">Create Account</a>
+        </p>
+
+        <p>
+            <a href="/">← Back to Home</a>
+        </p>
+
+    </div>
+
+</body>
+
+</html>

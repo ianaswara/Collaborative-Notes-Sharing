@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Create Note | NoteHub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Create a New Note 📝</h1>
+
+        <p>Share your notes with other students.</p>
+
+        <br>
+
+        <form method="POST" action="/create-note" enctype="multipart/form-data">
+
+            <label>Note Title:</label>
+            <input
+                type="text"
+                name="title"
+                placeholder="Enter note title"
+                required
+            >
+
+            <br><br>
+
+            <label>Subject:</label>
+            <input
+                type="text"
+                name="subject"
+                placeholder="Enter subject"
+                required
+            >
+
+            <br><br>
+
+            <label>Note Content:</label>
+
+            <textarea
+                name="content"
+                rows="10"
+                placeholder="Write your notes here..."
+                required
+            ></textarea>
+
+            <br><br>
+
+            <label>Upload PDF:</label>
+            <br><br>
+
+            <input
+                type="file"
+                name="pdf"
+                accept=".pdf"
+            >
+
+            <br><br>
+
+            <button type="submit">
+                Save Note
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="/dashboard">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+
+</html>
